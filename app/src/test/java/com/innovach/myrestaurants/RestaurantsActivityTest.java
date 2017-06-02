@@ -20,11 +20,14 @@ public class RestaurantsActivityTest {
     private RestaurantsActivity activity;
     private ListView mRestaurantListView;
 
+    //rule begin RestaurantsActivity and define mRestaurantListView before each test
     @Before
     public void setup() {
         activity = Robolectric.setupActivity(RestaurantsActivity.class);
         mRestaurantListView = (ListView) activity.findViewById(R.id.listView);
     }
+
+    //asserts ListView populates with the number of restaurants passed into restaurant array
     @Test
     public void restaurantListViewPopulates() {
         assertNotNull(mRestaurantListView.getAdapter());
