@@ -1,13 +1,31 @@
 package com.innovach.myrestaurants;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 
-public class MyRestaurantsArrayAdapter extends AppCompatActivity {
+public class MyRestaurantsArrayAdapter extends ArrayAdapter {
+    private Context mContext;
+    private String[] mRestaurants;
+    private String[] mCuisines;
+
+    public MyRestaurantsArrayAdapter(Context mContext, int resource, String[] mRestaurants, String[] mCuisines) {
+        super(mContext, resource);
+        this.mContext = mContext;
+        this.mRestaurants = mRestaurants;
+        this.mCuisines = mCuisines;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_restaurants_array_adapter);
+    public Object getItem(int position) {
+        String restaurant = mRestaurants[position];
+        String cuisine = mCuisines[position];
+        return String.format("%s \nServes great: %s", restaurant, cuisine);
+    }
+
+    @Override
+    public int getCount() {
+        return mRestaurants.length;
     }
 }
