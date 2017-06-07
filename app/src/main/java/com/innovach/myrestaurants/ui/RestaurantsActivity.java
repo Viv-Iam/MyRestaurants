@@ -1,15 +1,20 @@
 package com.innovach.myrestaurants.ui;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.innovach.myrestaurants.MyRestaurantsArrayAdapter;
 import com.innovach.myrestaurants.R;
 import com.innovach.myrestaurants.adapters.RestaurantListAdapter;
 import com.innovach.myrestaurants.models.Restaurant;
@@ -27,8 +32,7 @@ import okhttp3.Response;
 public class RestaurantsActivity extends AppCompatActivity {
     public static final String TAG = RestaurantsActivity.class.getSimpleName();
 
-    @Bind(R.id.recyclerView)
-    RecyclerView mRecyclerView;
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private RestaurantListAdapter mAdapter;
 
     public ArrayList<Restaurant> mRestaurants = new ArrayList<>();
@@ -60,7 +64,6 @@ public class RestaurantsActivity extends AppCompatActivity {
                 mRestaurants = yelpService.processResults(response);
 
                 RestaurantsActivity.this.runOnUiThread(new Runnable() {
-
                     @Override
                     public void run() {
                         mAdapter = new RestaurantListAdapter(getApplicationContext(), mRestaurants);
