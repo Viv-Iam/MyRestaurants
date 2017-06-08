@@ -20,7 +20,7 @@ public class RestaurantsActivityTest {
     private RestaurantsActivity activity;
     private ListView mRestaurantListView;
 
-    //rule begin RestaurantsActivity and define mRestaurantListView before each test
+    //rule begin RestaurantListActivity and define mRestaurantListView before each test
     @Before
     public void setup() {
         activity = Robolectric.setupActivity(RestaurantsActivity.class);

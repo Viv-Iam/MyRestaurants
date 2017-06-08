@@ -3,6 +3,8 @@ package com.innovach.myrestaurants;
 import android.support.test.rule.ActivityTestRule;
 import android.view.View;
 
+import com.innovach.myrestaurants.ui.RestaurantListActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -18,10 +20,10 @@ import static org.hamcrest.core.IsNot.not;
 
 public class RestaurantsActivityInstrumentationTest {
 
-    //Rule to begin RestaurantsActivity before each test
+    //Rule to begin RestaurantListActivity before each test
     @Rule
-    public ActivityTestRule<RestaurantsActivity> activityTestRule =
-            new ActivityTestRule<>(RestaurantsActivity.class);
+    public ActivityTestRule<RestaurantListActivity> activityTestRule =
+            new ActivityTestRule<>(RestaurantListActivity.class);
 
     //asserting toast instantiates with correct restaurant name
     @Test
@@ -29,7 +31,7 @@ public class RestaurantsActivityInstrumentationTest {
         View activityDecorView = activityTestRule.getActivity().getWindow().getDecorView();
         String restaurantName = "Mi Mero Mole";
         onData(anything())
-                .inAdapterView(withId(R.id.listView))
+                .inAdapterView(withId(R.id.recyclerView))
                 .atPosition(0)
                 .perform(click());
         onView(withText(restaurantName)).inRoot(withDecorView(not(activityDecorView)))
