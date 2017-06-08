@@ -1,6 +1,9 @@
 package com.innovach.myrestaurants.models;
 
+import org.parceler.Parcel;
+
 import java.util.ArrayList;
+@Parcel
 
 public class Restaurant {
      String mName;
