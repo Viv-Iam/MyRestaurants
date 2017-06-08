@@ -3,6 +3,7 @@ package com.innovach.myrestaurants.models;
 import org.parceler.Parcel;
 
 import java.util.ArrayList;
+
 @Parcel
 
 public class Restaurant {
@@ -47,9 +48,7 @@ public class Restaurant {
         return mRating;
     }
 
-    public String getImageUrl(){
-        return mImageUrl;
-    }
+    public String getImageUrl() { return mImageUrl; }
 
     public ArrayList<String> getAddress() {
         return mAddress;
@@ -63,7 +62,6 @@ public class Restaurant {
         return mLongitude;
     }
 
-    public ArrayList<String> getCategories() {
-        return mCategories;
-    }
+    public ArrayList<String> getCategories() { return mCategories; }
+
 }
