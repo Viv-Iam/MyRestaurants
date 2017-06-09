@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1078825845668",
+    "firebase_url": "https://myrestaurants-17cd1.firebaseio.com",
+    "project_id": "myrestaurants-17cd1",
+    "storage_bucket": "myrestaurants-17cd1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078825845668:android:2c657c73fd274df2",
+        "android_client_info": {
+          "package_name": "com.innovach.myrestaurants"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078825845668-8igqmib2dvtdmkitpkcu12os5tu1t45j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.innovach.myrestaurants",
+            "certificate_hash": "b77c2577790e0a6bbb973f0ce30654a7fec03ccf"
+          }
+        },
+        {
+          "client_id": "1078825845668-j44k8req4omac8k0f3o6tm3lvjt2fvf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj-sLj_yw9NMqg5GXUUtnanEbMGz-Fmss"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078825845668-j44k8req4omac8k0f3o6tm3lvjt2fvf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
