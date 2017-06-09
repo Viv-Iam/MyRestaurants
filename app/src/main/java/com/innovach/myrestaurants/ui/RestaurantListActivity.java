@@ -2,11 +2,15 @@ package com.innovach.myrestaurants.ui;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
+import com.innovach.myrestaurants.Constants;
 import com.innovach.myrestaurants.R;
 import com.innovach.myrestaurants.adapters.RestaurantListAdapter;
 import com.innovach.myrestaurants.models.Restaurant;
@@ -22,6 +26,8 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class RestaurantListActivity extends AppCompatActivity {
+    private SharedPreferences mSharedPreferences;
+    private String mRecentAddress;
     public static final String TAG = RestaurantListActivity.class.getSimpleName();
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
@@ -39,6 +45,12 @@ public class RestaurantListActivity extends AppCompatActivity {
         String location = intent.getStringExtra("location");
 
         getRestaurants(location);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+        if (mRecentAddress != null) {
+            getRestaurants(mRecentAddress);
+        }
     }
 
     private void getRestaurants(String location) {
