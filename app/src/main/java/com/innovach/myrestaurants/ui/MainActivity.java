@@ -62,7 +62,7 @@ private DatabaseReference mSearchedLocationReference;
     }
 
     public void saveLocationToFirebase(String location) {
-        mSearchedLocationReference.setValue(location);
+        mSearchedLocationReference.push().setValue(location);
     }
 //    private void addToSharedPreferences(String location) {
 //        mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
