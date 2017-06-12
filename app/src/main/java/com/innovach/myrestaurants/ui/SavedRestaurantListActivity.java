@@ -2,6 +2,19 @@ package com.innovach.myrestaurants.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.innovach.myrestaurants.Constants;
+import com.innovach.myrestaurants.R;
+import com.innovach.myrestaurants.adapters.FirebaseRestaurantViewHolder;
+import com.innovach.myrestaurants.models.Restaurant;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class SavedRestaurantListActivity extends AppCompatActivity {
     private DatabaseReference mRestaurantReference;
