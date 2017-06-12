@@ -1,6 +1,7 @@
 
 package com.innovach.myrestaurants.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,5 +33,15 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         mCreateUserButton.setOnClickListener(this);
     }
     @Override
-
+    public void onClick(View view) {
+        if (view == mLoginTextView) {
+            Intent intent = new Intent(CreateAccountActivity.this, LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        }
+        if (view == mCreateUserButton) {
+            createNewUser();
+        }
+    }
 }
