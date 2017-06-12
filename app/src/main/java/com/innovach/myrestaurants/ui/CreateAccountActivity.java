@@ -40,6 +40,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         mAuth = FirebaseAuth.getInstance();
         mLoginTextView.setOnClickListener(this);
         mCreateUserButton.setOnClickListener(this);
+        createAuthStateListener();
     }
     @Override
     public void onClick(View view) {
