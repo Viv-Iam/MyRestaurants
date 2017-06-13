@@ -45,8 +45,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         mAuth = FirebaseAuth.getInstance();
         mLoginTextView.setOnClickListener(this);
         mCreateUserButton.setOnClickListener(this);
-        mName = mNameEditText.getText().toString().trim();
-        boolean validName = isValidName(mName);
+
         createAuthStateListener();
         createAuthProgressDialog();
     }
@@ -70,13 +69,16 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         }
     }
     private void createNewUser() {
-        final String name = mNameEditText.getText().toString().trim();
+//        final String name = mNameEditText.getText().toString().trim();
         final String email = mEmailEditText.getText().toString().trim();
         String password = mPasswordEditText.getText().toString().trim();
         String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
+        mName = mNameEditText.getText().toString().trim();
 
+
+        boolean validName = isValidName(mName);
         boolean validEmail = isValidEmail(email);
-        boolean validName = isValidName(name);
+//        boolean validName = isValidName(name);
         boolean validPassword = isValidPassword(password, confirmPassword);
         if (!validEmail || !validName || !validPassword) return;
         mAuthProgressDialog.show();
