@@ -1,12 +1,10 @@
 # MyRestaurants
-An android app that uses Yelp API to enable a user search restaurants by entering a zip code
-
 #### By Opondoh Vivian
 
 ## Description
 
-MyRestaurants is an Android application where users can search for restaurants, by zipcode, through the Yelp API. Users can click on restaurants that show on the list and see more details. The User can click on the Yelp link and go to the Yelp app or Yelp.com in their browser. The User can click on the phone and call the number listed. The User can click the address and look it up in a Map app.
-The User can click 'Save Restaurant' and it will appear on their My Saved Restaurants list. In My Saved Restaurants, the User can change the order of the restaurants listed and delete restaurants from their saved list.
+MyRestaurants is an Android application where users can search for restaurants, by zipcode, through the Yelp API. Users can click on restaurants that show on the list and see more details. The User can click on the phone and call the number listed. The User can click the address and look it up in a Map app.
+The User can click 'Save Restaurant' and it will appear on their My Saved Restaurants list.
 
 ## Setup/Installation Requirements
 You will need the following programs installed on your computer.
